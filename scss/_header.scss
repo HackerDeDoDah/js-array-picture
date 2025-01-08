@@ -1,0 +1,18 @@
+// header
+
+.header-container {
+    display: flex;
+    border: 2px solid #333;
+    background-color: #333;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    width: 100vw;
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    color: #fff;
+}
