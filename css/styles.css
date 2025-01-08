@@ -40,7 +40,9 @@
   width: 175px;
   text-align: center;
   font-size: 2rem;
+  color: #fff;
   background-color: rgb(91, 126, 230);
+  cursor: pointer;
 }
 
 #btn2 {
@@ -48,6 +50,7 @@
   height: 100px;
   text-align: center;
   background-color: rgb(246, 152, 21);
+  cursor: pointer;
 }
 
 .card img {
@@ -56,17 +59,63 @@
 }
 
 .email {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 550px;
   justify-content: center;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
 }
+.email hr {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 #email {
-  width: 400px;
+  width: 200px;
   height: 30px;
   font-size: 1rem;
+}
+
+.fa-regular {
+  font-size: 3rem;
+  color: #fff;
+  align-self: center;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.array-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #333;
+  background-color: #333;
+  min-height: 200px;
+  width: 575px;
+}
+
+.array-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  margin: 10px;
+  height: 60px;
+  width: 550px;
+}
+
+#btn4, #btn5, #btn6 {
+  width: 150px;
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgb(91, 126, 230);
+  cursor: pointer;
 }
 
 * {
