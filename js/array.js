@@ -39,9 +39,11 @@ function updateSavedImages() {
         const img = document.createElement('img');
         img.src = url;
         img.alt = 'Saved image';
-        img.style.margin = '5px';
-        img.style.width = '60px';
-        img.style.height = 'auto';
+        img.style.marginLeft = '5.5px';
+        img.style.marginTop = '5px';
+        img.style.width = '70px';
+        img.style.height = '70px';
+        img.style.borderRadius = '3px';
 
         savedImagesContainer.appendChild(img);
     });

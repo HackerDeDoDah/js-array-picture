@@ -103,10 +103,10 @@
   background-color: #333;
   min-height: 200px;
   width: 575px;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 .array-container hr {
-  margin: 20px;
+  margin: 10px;
 }
 
 .array-btn-container {
@@ -134,7 +134,8 @@
 
 #image-collection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 15px;
   border: 2px solid #333;
   background-color: #b4afaf;
@@ -166,7 +167,6 @@ body {
 }
 
 footer {
-  position: fixed;
   bottom: 0;
   background-color: #333;
   padding: 20px;
