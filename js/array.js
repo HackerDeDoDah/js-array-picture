@@ -1,3 +1,8 @@
+//
+// vars
+//
+
+const savedImages = [];
 
 //
 // Function to refresh the card image
@@ -13,20 +18,44 @@ document.getElementById('btn1').addEventListener('click', refreshCardImage);
 
 
 //
+// Write image to DOM
+//
+function writeImage() {
+    const cardImage = document.getElementById('cardImage');
+    const imageUrl = cardImage.src;
+
+    savedImages.push(imageUrl);
+
+    updateSavedImages();
+}
+
+
+
+function updateSavedImages() {
+    const savedImagesContainer = document.getElementById('image-collection');
+    savedImagesContainer.innerHTML = ''; // Clear the container
+
+    savedImages.forEach(url => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = 'Saved image';
+        img.style.margin = '5px';
+        img.style.width = '60px';
+        img.style.height = 'auto';
+
+        savedImagesContainer.appendChild(img);
+    });
+}
+
+document.getElementById('btn3').addEventListener('click', writeImage);
+
+
+
+
+//
 // Array to store emails
 //
 const emailArray = [];
-
-// Function to update email list display
-function updateEmailList() {
-    const emailList = document.getElementById('emailList');
-    emailList.innerHTML = ''; // Clear the list
-    emailArray.forEach(email => {
-        const listItem = document.createElement('li');
-        listItem.textContent = email;
-        emailList.appendChild(listItem);
-    });
-}
 
 // Form submission event listener
 document.getElementById('emailForm').addEventListener('submit', function (event) {
@@ -48,6 +77,27 @@ document.getElementById('emailForm').addEventListener('submit', function (event)
     // Clear the input field
     document.getElementById('emailInput').value = '';
 });
+
+
+// Function to update email list display
+function updateEmailList() {
+    const emailList = document.getElementById('emailList');
+    const emailSelect = document.getElementById('emailSelect');
+    emailList.innerHTML = ''; // Clear the list
+    emailSelect.innerHTML = '<option value="">Select an email</option>';
+
+    emailArray.forEach(email => {
+        const listItem = document.createElement('li');
+        listItem.textContent = email;
+        emailList.appendChild(listItem);
+
+        const option = document.createElement('option');
+        option.value = email;
+        option.textContent = email;
+        emailSelect.appendChild(option);
+    });
+}
+
 
 
 
