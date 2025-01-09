@@ -15,13 +15,13 @@
     </header>
     <main>
         <div class="container b-rad-5 m-3">
-            <div class="card b-rad-3">
+            <div id="card" class="card b-rad-3">
                 <div class="card-body b-rad-3 col-3">
-                    <img class="b-rad-3" src="https://picsum.photos/600" alt="random picture">
+                    <img id="cardImage" class="b-rad-3" src="https://picsum.photos/600?random=1" alt="random picture">
                     <div class="btn-container">
-                        <div id="btn1" class="btn-lg p-2 b-rad-3 m-2"><strong>Generate Image</strong></div>
-                        <div id="btn2" class="btn-secondary b-rad-50 p-2 m-2"><i class="fa-regular fa-floppy-disk"></i></div>
-                        <div id="btn3" class="btn-lg b-rad-3 p-2 m-2"><strong>Add to Collection</strong></div>
+                        <button id="btn1" class="btn-lg p-2 b-rad-3 m-2"><strong>Generate Image</strong></button>
+                        <button id="btn2" class="btn-secondary b-rad-50 p-2 m-2"><i class="fa-regular fa-floppy-disk"></i></button>
+                        <button type="submit" id="btn3" class="btn-lg b-rad-3 p-2 m-2"><strong>Add to Collection</strong></button>
                     </div>
                 </div>
             </div>
@@ -30,23 +30,29 @@
         <div class="email">
             <p>Enter Your Email To Save Your Collection</p>
             <hr>
-            <input type="text" id="email" class="b-rad-2" placeholder="Enter Your Email">
+            <form id="emailForm">
+                <input type="email" id="email" placeholder="Enter email address" required>
+            </form>
         </div>
 
         <div class="array-container b-rad-5 m-3">
             <div class="array-btn-container">
-                <div id="btn4" class="btn-lg p-2 b-rad-3 m-2">Delete Collection</div>
-                <div id="btn5" class="btn-lg p-2 b-rad-3 m-2">Select Folder</div>
-                <div id="btn6" class="btn-lg p-2 b-rad-3 m-2">Delete All</div>
+                <button id="btn4" class="btn-lg p-2 b-rad-3 m-2">Delete Collection</button>
+                <select name="Email" id="emailSelect">
+                    <option value="0">Select Email</option>
+                </select>
+                <button id="btn6" class="btn-lg p-2 b-rad-3 m-2">Delete All</button>
             </div>
+            <hr>
+                <div id="image-collection" class="b-rad-3"></div>
         </div>
-            <div id="arrayContainer" class="b-rad-3 p-2 m-2"></div>
+            
     </main>
     <footer>
         <p>&copy; 2025 ChrisDayPro</p>
     </footer>
-<style src='https://cdn.jsdelivr.net/gh/HackerDeDoDah/myBoot@main/myBoot.js'></style>
+<script src='https://cdn.jsdelivr.net/gh/HackerDeDoDah/myBoot@main/myBoot.js'></script>
 <script src="https://kit.fontawesome.com/97e5723333.js" crossorigin="anonymous"></script>
-<style src="js/array.js"></style>
+<script src="js/array.js"></script>
 </body>
 </html>

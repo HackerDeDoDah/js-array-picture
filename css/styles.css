@@ -17,6 +17,7 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   border: 2px solid #333;
   background-color: #333;
   padding: 1rem;
@@ -27,7 +28,7 @@
 }
 
 .card {
-  width: 550px;
+  width: 540px;
 }
 
 .btn-container {
@@ -44,13 +45,20 @@
   background-color: rgb(91, 126, 230);
   cursor: pointer;
 }
+#btn1:hover, #btn3:hover {
+  background-color: rgb(246, 152, 21);
+}
 
 #btn2 {
   width: 100px;
   height: 100px;
   text-align: center;
-  background-color: rgb(246, 152, 21);
+  background-color: rgb(91, 126, 230);
+  align-content: center;
   cursor: pointer;
+}
+#btn2:hover {
+  background-color: rgb(246, 152, 21);
 }
 
 .card img {
@@ -83,9 +91,7 @@
 .fa-regular {
   font-size: 3rem;
   color: #fff;
-  align-self: center;
-  justify-self: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .array-container {
@@ -97,6 +103,10 @@
   background-color: #333;
   min-height: 200px;
   width: 575px;
+  margin-bottom: 60px;
+}
+.array-container hr {
+  margin: 20px;
 }
 
 .array-btn-container {
@@ -104,18 +114,41 @@
   flex-direction: row;
   align-content: center;
   justify-content: space-evenly;
-  margin: 10px;
+  margin: 10px 20px;
   height: 60px;
   width: 550px;
 }
 
-#btn4, #btn5, #btn6 {
-  width: 150px;
+#btn4, #btn6 {
+  width: 100px;
+  height: 60px;
   text-align: center;
   font-size: 1rem;
   color: #fff;
   background-color: rgb(91, 126, 230);
   cursor: pointer;
+}
+#btn4:hover, #btn6:hover {
+  background-color: rgb(246, 152, 21);
+}
+
+#image-collection {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  border: 2px solid #333;
+  background-color: #b4afaf;
+  min-height: 200px;
+  width: 540px;
+  margin-bottom: 60px;
+}
+
+#selectEmail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 15px;
 }
 
 * {
@@ -129,13 +162,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #b4afaf;
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
   background-color: #333;
   padding: 20px;
   text-align: center;
   width: 100vw;
+  height: 60px;
 }
 footer p {
   color: #fff;
