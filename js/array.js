@@ -51,7 +51,9 @@ function updateSavedImages() {
 
 document.getElementById('btn3').addEventListener('click', writeImage);
 
-
+//
+// download image
+//
 
 
 //
