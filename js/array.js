@@ -72,7 +72,7 @@ document.getElementById('emailForm').addEventListener('submit', function (event)
     event.preventDefault();
     const emailInput = document.getElementById('emailInput').value.trim();
 
-    if (!/^(([^<>()[]\.,;:\s@"]+(\.[^<>()[]\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailInput)) {
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput)) {
         showCustomAlert('Please enter a valid email address.');
         return;
     }
