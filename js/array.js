@@ -51,9 +51,9 @@ function displayImagesForSelectedEmail() {
             const img = document.createElement('img');
             img.src = url;
             img.alt = 'Saved image';
-            img.style.margin = '5px';
-            img.style.width = '70px';
-            img.style.height = '70px';
+            img.style.margin = '10px';
+            img.style.width = '107px';
+            img.style.height = '107px';
             img.style.borderRadius = '3px';
             imageContainer.appendChild(img);
         });
