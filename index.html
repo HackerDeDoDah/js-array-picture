@@ -31,7 +31,7 @@
             <p>Enter Your Email To Save Your Collection</p>
             <hr>
             <form id="emailForm">
-                <input type="email" id="email" placeholder="Enter email address" required>
+                <input type="email" id="emailInput" placeholder="Enter email address" required>
             </form>
         </div>
 
@@ -46,9 +46,13 @@
             <hr>
                 <div id="image-collection" class="b-rad-3"></div>
         </div>
-        <ul id="emailList">
-
-        </ul>
+        <!-- custom alert -->
+        <div id="customAlert" class="custom-alert">
+            <div class="custom-alert-content">
+                <p id="alertMessage"></p>
+                <button id="closeAlert">OK</button>
+            </div>
+        </div>
             
     </main>
     <footer>

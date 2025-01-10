@@ -8,7 +8,6 @@
   right: 0;
   width: 100%;
 }
-
 .header-container h1 {
   font-size: 1rem;
   color: #fff;
@@ -44,7 +43,7 @@
 }
 
 #btn1, #btn3 {
-  width: 175px;
+  max-width: 175px;
   text-align: center;
   font-size: 2rem;
   color: #fff;
@@ -77,22 +76,34 @@
   align-items: center;
   flex-direction: column;
   max-width: 100%;
-  width: 550px;
+  width: 300px;
   justify-content: center;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 .email hr {
   width: 50%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+@media (max-width: 540px) {
+  .email {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .email {
+    width: 200px;
+  }
+}
 
-#email {
-  width: 200px;
+#emailInput {
+  max-width: 200px;
   height: 30px;
   font-size: 1rem;
+  text-align: center;
 }
 
 .fa-regular {
@@ -147,6 +158,7 @@
   border: 2px solid #333;
   background-color: #b4afaf;
   min-height: 200px;
+  height: 100%;
   max-width: 100%;
   width: 540px;
   margin-bottom: 60px;
@@ -158,6 +170,48 @@
   flex-direction: column;
   width: 200px;
   margin-top: 15px;
+}
+
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-alert-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 80%;
+}
+
+.custom-alert-content p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#closeAlert {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#closeAlert:hover {
+  background-color: #0056b3;
 }
 
 * {
@@ -175,14 +229,12 @@ body {
   overflow-x: hidden;
 }
 
-footer {
-  bottom: 0;
-  background-color: #333;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-  height: 60px;
+main {
+  display: flex;
+  flex-direction: row;
 }
-footer p {
-  color: #fff;
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=styles.css.map */

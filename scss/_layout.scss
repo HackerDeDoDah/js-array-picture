@@ -11,3 +11,11 @@ body {
     background-color: #b4afaf;
     overflow-x: hidden;
 }
+
+main {
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
