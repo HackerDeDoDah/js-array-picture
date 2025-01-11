@@ -31,7 +31,7 @@ document.getElementById('emailSelect').addEventListener('change', function (even
 // Save image to email array
 function saveImageToEmail(imageUrl) {
     if (!selectedEmail) {
-        showCustomAlert('Please select an email before saving an image.');
+        showCustomAlert('Nope! You need to add an email before saving an image.');
         return;
     }
     if (!emailImageMap[selectedEmail]) {
@@ -51,7 +51,7 @@ function displayImagesForSelectedEmail() {
             const img = document.createElement('img');
             img.src = url;
             img.alt = 'Saved image';
-            img.style.margin = '10px';
+            img.style.margin = '7px';
             img.style.width = '107px';
             img.style.height = '107px';
             img.style.borderRadius = '3px';
@@ -73,6 +73,7 @@ document.getElementById('emailForm').addEventListener('submit', function (event)
     const emailInput = document.getElementById('emailInput').value.trim();
 
     if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput)) {
+        event.preventDefault();
         showCustomAlert('Please enter a valid email address.');
         return;
     }
@@ -100,8 +101,8 @@ function showCustomAlert(message) {
         alertBox.style.display = "none";
     };
 
-    // hide alert 5 seconds
+    // hide alert 7 seconds
     setTimeout(() => {
         alertBox.style.display = "none";
-    }, 5000);
+    }, 7000);
 }
