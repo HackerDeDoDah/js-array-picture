@@ -43,24 +43,6 @@
     }
 }
 
-#btn1, #btn3 {
-    max-width: 200px;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: rgb(91, 126, 230);
-    cursor: pointer;
-    &:hover {
-        background-color: rgb(246, 152, 21);
-        text-shadow: 2px 2px 2px #333;
-    }
-
-    @media (max-width: 768px) {
-        width: 100%;
-        max-width: none;
-    }
-}
-
 .card img {
     width: 100%;
     height: auto;
@@ -79,6 +61,9 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    #p1 {
+        font-size: 1.5rem;
+    }
     hr {
         width: 50%;
         margin-top: 20px;
@@ -146,25 +131,6 @@
     }
 }
 
-#btn4 {
-    width: 250px;
-    height: 60px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #fff;
-    background-color: rgb(91, 126, 230);
-    cursor: pointer;
-    &:hover {
-        background-color: rgb(246, 152, 21);
-        text-shadow: 2px 2px 2px #333;
-    }
-
-    @media (max-width: 768px) {
-        width: 100%;
-        height: 50px;
-    }
-}
-
 #image-collection {
     display: flex;
     flex-direction: row;
@@ -192,7 +158,6 @@
     width: 100%;
     margin-top: 15px;
 }
-
 
 // custom alert
 
@@ -252,4 +217,73 @@
 
 #closeAlert:hover {
     background-color: #0056b3;
+}
+
+
+// button animation water fill
+
+button{
+    width: 200px;
+    padding: 12px;
+    border-radius: 20px;
+    color: white;
+    border: 3px solid #284cff;
+    cursor: pointer;
+    background: transparent;
+    background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+}
+
+button:hover{
+    background-position: center;
+}
+
+button:nth-child(1){
+    filter: hue-rotate(0deg);
+}
+
+button:nth-child(2){
+    filter: hue-rotate(40deg);
+}
+
+button:nth-child(3){
+    filter: hue-rotate(60deg);
+}
+
+button:nth-child(4){
+    filter: hue-rotate(80deg);
+}
+
+button:nth-child(5){
+    filter: hue-rotate(100deg);
+}
+
+button:nth-child(6){
+    filter: hue-rotate(120deg);
+}
+
+button:nth-child(7){
+    filter: hue-rotate(140deg);
+}
+
+button:nth-child(8){
+    filter: hue-rotate(160deg);
+}
+
+button:nth-child(9){
+    filter: hue-rotate(180deg);
+}
+
+button:nth-child(10){
+    filter: hue-rotate(160deg);
+}
+
+button:nth-child(11){
+    filter: hue-rotate(200deg);
+}
+
+button:nth-child(12){
+    filter: hue-rotate(260deg);
 }
