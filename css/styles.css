@@ -74,6 +74,7 @@
 }
 #btn1:hover, #btn3:hover {
   background-color: rgb(246, 152, 21);
+  text-shadow: 2px 2px 2px #333;
 }
 @media (max-width: 768px) {
   #btn1, #btn3 {
@@ -175,16 +176,17 @@
 }
 
 #btn4 {
-  width: 100px;
+  width: 250px;
   height: 60px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #fff;
   background-color: rgb(91, 126, 230);
   cursor: pointer;
 }
 #btn4:hover {
   background-color: rgb(246, 152, 21);
+  text-shadow: 2px 2px 2px #333;
 }
 @media (max-width: 768px) {
   #btn4 {
@@ -208,7 +210,7 @@
 }
 @media (max-width: 768px) {
   #image-collection {
-    width: 90%;
+    width: 95%;
     flex-direction: column;
   }
 }

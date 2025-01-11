@@ -52,19 +52,32 @@ function displayImagesForSelectedEmail() {
             img.src = url;
             img.alt = 'Saved image';
             img.style.margin = '7px';
-            img.style.width = '107px';
-            img.style.height = '107px';
-            img.style.borderRadius = '3px';
+            img.style.width = '144px';
+            img.style.height = '144px';
+            img.style.borderRadius = '4px';
             imageContainer.appendChild(img);
         });
     }
 }
 
-// Save image to selected email array
+// add image to selected email array
 document.getElementById('btn3').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
     const imageUrl = cardImage.src;
     saveImageToEmail(imageUrl);
+});
+
+// Delete all images for selected email
+document.getElementById('btn4').addEventListener('click', function () {
+    if (!selectedEmail) {
+        showCustomAlert('Please select an email to delete its images.');
+        return;
+    }
+    if (emailImageMap[selectedEmail]) {
+        emailImageMap[selectedEmail] = [];
+        displayImagesForSelectedEmail();
+        showCustomAlert(`All images for ${selectedEmail} have gone bye bye.`);
+    }
 });
 
 // Form event listener
