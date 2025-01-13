@@ -25,7 +25,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .container {
     padding: 0.5rem;
     max-width: 95%;
@@ -39,7 +39,7 @@
   max-height: 565px;
   align-items: center;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .card {
     max-width: 100%;
     max-height: 100%;
@@ -51,7 +51,7 @@
   justify-content: space-between;
   margin-top: 20px;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .btn-container {
     flex-direction: column;
     align-items: center;
@@ -74,6 +74,11 @@
   gap: 10px;
   width: 100%;
   max-width: 300px;
+}
+@media (max-width: 1190px) {
+  .mid-section {
+    max-width: 100%;
+  }
 }
 
 .instructions {
@@ -111,7 +116,7 @@ li {
     width: 100%;
   }
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .email {
     width: 90%;
   }
@@ -124,7 +129,7 @@ li {
   text-align: center;
   word-wrap: break-word;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   #emailInput {
     width: 100%;
     max-width: none;
@@ -143,7 +148,7 @@ li {
   margin: 20px 20px;
   border: 2px solid #333;
   background-color: #333;
-  max-height: 600px;
+  height: 600px;
   max-width: 530px;
   width: 100%;
   margin-bottom: 100px;
@@ -151,9 +156,10 @@ li {
 .array-container hr {
   margin: 10px;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .array-container {
     max-width: 95%;
+    align-items: center;
   }
 }
 
@@ -162,13 +168,14 @@ li {
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
+  align-items: center;
   margin: 10px 20px;
   height: 60px;
   width: 490px;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .array-btn-container {
-    width: 100%;
+    width: 90%;
     flex-direction: column;
     gap: 10px;
     height: auto;
@@ -193,7 +200,7 @@ li {
   margin-bottom: 15px;
   overflow-y: scroll;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   #image-collection {
     width: 95%;
     flex-direction: column;
@@ -204,13 +211,12 @@ li {
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 300px;
-  width: 100%;
+  width: 300px;
   margin-top: 15px;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   #selectEmail {
-    width: 50%;
+    width: 200px;
   }
 }
 
@@ -226,7 +232,7 @@ li {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .custom-alert {
     padding: 10px;
   }
@@ -241,7 +247,7 @@ li {
   max-width: 400px;
   width: 80%;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   .custom-alert-content {
     width: 90%;
     padding: 15px;
@@ -262,7 +268,7 @@ li {
   border-radius: 5px;
   cursor: pointer;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   #closeAlert {
     width: 100%;
     padding: 10px;
@@ -284,7 +290,7 @@ button {
   background-image: url("../assets/fill-blue.png");
   background-repeat: repeat-x;
   background-position: 0 -100%;
-  transition: 1s ease;
+  transition: 1.5s ease;
 }
 
 button:hover {
@@ -358,7 +364,7 @@ main {
   display: flex;
   flex-direction: row;
 }
-@media (max-width: 1030px) {
+@media (max-width: 1190px) {
   main {
     flex-direction: column;
   }
