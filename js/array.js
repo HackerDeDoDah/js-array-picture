@@ -1,22 +1,34 @@
 // Array for emails and images
 const emailImageMap = {};
 let selectedEmail = null;
+let currentStage = 0;
+
+// update instruction stages
+function updateStage(stage, liId) {
+    if (currentStage === stage - 1) {
+        const li = document.getElementById(liId);
+        li.style.color = 'red';
+        currentStage = stage;
+        console.log(`Stage ${stage} completed`);
+    }
+}
+
 
 // refresh card image
 document.getElementById('btn1').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
     const newSrc = `https://picsum.photos/600?random=${Date.now()}`;
     cardImage.src = newSrc;
-    const li1 = document.getElementById('li1');
-    li1.style.color = 'red';
+    
+    updateStage(1, 'li1');
 });
 
 // Update email dropdown
 function updateEmailList() {
     const emailSelect = document.getElementById('emailSelect');
     emailSelect.innerHTML = '<option value="">Select an email</option>';
-    const li2 = document.getElementById('li2');
-    li2.style.color = 'red';
+
+    updateStage(2, 'li2');
 
     for (const email in emailImageMap) {
 
@@ -30,9 +42,9 @@ function updateEmailList() {
 // Handle email selection
 document.getElementById('emailSelect').addEventListener('change', function (event) {
     selectedEmail = event.target.value;
-    displayImagesForSelectedEmail(); // Update displayed images
-    const li3 = document.getElementById('li3');
-    li3.style.color = 'red';
+    displayImagesForSelectedEmail(); // display images
+
+    updateStage(3, 'li3');
 });
 
 // Save image to email array
@@ -72,14 +84,16 @@ document.getElementById('btn3').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
     const imageUrl = cardImage.src;
     saveImageToEmail(imageUrl);
-    const li4 = document.getElementById('li4');
-    li4.style.color ='red';
+
+
+    updateStage(4, 'li4');
 });
 
 // Delete all images for selected email
 document.getElementById('btn4').addEventListener('click', function () {
-    const li5 = document.getElementById('li5');
-    li5.style.color ='red';
+
+    updateStage(5, 'li5');
+
     if (!selectedEmail) {
         showCustomAlert('Please select an email to delete its images.');
         return;
@@ -125,8 +139,4 @@ function showCustomAlert(message) {
         alertBox.style.display = "none";
     };
 
-    // hide alert 7 seconds
-    setTimeout(() => {
-        alertBox.style.display = "none";
-    }, 7000);
 }
