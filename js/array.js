@@ -26,6 +26,7 @@ function updateEmailList() {
 // Handle email selection
 document.getElementById('emailSelect').addEventListener('change', function (event) {
     selectedEmail = event.target.value;
+    displayImagesForSelectedEmail(); // Update displayed images
 });
 
 // Save image to email array
