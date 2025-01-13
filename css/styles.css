@@ -30,7 +30,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .container {
     padding: 0.5rem;
     max-width: 95%;
@@ -44,7 +44,7 @@
   max-height: 570px;
   align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .card {
     max-width: 100%;
     max-height: 100%;
@@ -56,7 +56,7 @@
   justify-content: space-between;
   margin-top: 20px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .btn-container {
     flex-direction: column;
     align-items: center;
@@ -71,6 +71,24 @@
   margin-right: auto;
 }
 
+.mid-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.instructions {
+  font-size: 1rem;
+}
+
+li {
+  font-size: 12px;
+}
+
 .email {
   display: flex;
   align-items: center;
@@ -82,6 +100,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  word-wrap: break-word;
 }
 .email #p1 {
   font-size: 1.5rem;
@@ -96,7 +115,7 @@
     width: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .email {
     width: 90%;
   }
@@ -107,8 +126,9 @@
   height: 30px;
   font-size: 1rem;
   text-align: center;
+  word-wrap: break-word;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   #emailInput {
     width: 100%;
     max-width: none;
@@ -124,7 +144,7 @@
 .array-container {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: 20px 20px;
   border: 2px solid #333;
   background-color: #333;
   min-height: 200px;
@@ -135,9 +155,9 @@
 .array-container hr {
   margin: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .array-container {
-    width: 90%;
+    max-width: 95%;
   }
 }
 
@@ -150,7 +170,7 @@
   height: 60px;
   width: 490px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .array-btn-container {
     width: 100%;
     flex-direction: column;
@@ -172,7 +192,7 @@
   width: 495px;
   margin-bottom: 15px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   #image-collection {
     width: 95%;
     flex-direction: column;
@@ -187,6 +207,11 @@
   width: 100%;
   margin-top: 15px;
 }
+@media (max-width: 1030px) {
+  #selectEmail {
+    width: 50%;
+  }
+}
 
 .custom-alert {
   display: none;
@@ -200,7 +225,7 @@
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .custom-alert {
     padding: 10px;
   }
@@ -215,7 +240,7 @@
   max-width: 400px;
   width: 80%;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .custom-alert-content {
     width: 90%;
     padding: 15px;
@@ -230,13 +255,13 @@
 
 #closeAlert {
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   #closeAlert {
     width: 100%;
     padding: 10px;
@@ -255,10 +280,10 @@ button {
   border: 3px solid #284cff;
   cursor: pointer;
   background: transparent;
-  background-image: url("https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871");
+  background-image: url("../assets/fill-blue.png");
   background-repeat: repeat-x;
   background-position: 0 -100%;
-  transition: 1.5s ease;
+  transition: 1s ease;
 }
 
 button:hover {
@@ -332,7 +357,7 @@ main {
   display: flex;
   flex-direction: row;
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   main {
     flex-direction: column;
   }
