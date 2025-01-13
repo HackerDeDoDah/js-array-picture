@@ -22,7 +22,7 @@
 .card {
     width: 100%;
     max-width: 500px;
-    max-height: 570px;
+    max-height: 565px;
     align-items: center;
 
     @media (max-width: 1030px) {
@@ -164,7 +164,11 @@ li {
     flex-wrap: wrap;
     margin: 15px;
     border: 2px solid #333;
-    background-color: #b4afaf; 
+    background-color: #b4afaf;
+    background-image: url(../assets/tada.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
     min-height: 200px;
     height: 100%;
     max-width: 100%;
