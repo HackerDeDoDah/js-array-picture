@@ -172,7 +172,7 @@ li {
     border: 2px solid #333;
     background-color: #b4afaf;
     background-image: url(../assets/tada.png);
-    background-size: 50%;
+    background-size: 40%;
     background-repeat: no-repeat;
     background-position: bottom right;
     max-height: 475px;
@@ -192,6 +192,8 @@ li {
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 50px;
+    padding: 12px;
     width: 300px;
     margin-top: 15px;
 
