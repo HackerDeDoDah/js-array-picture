@@ -128,7 +128,7 @@ li {
     margin: 20px 20px;
     border: 2px solid #333;
     background-color: #333; 
-    min-height: 200px;
+    max-height: 600px;
     max-width: 530px;
     width: 100%;
     margin-bottom: 100px;
@@ -169,11 +169,12 @@ li {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: bottom right;
-    min-height: 200px;
+    max-height: 475px;
     height: 100%;
     max-width: 100%;
     width: 495px;
     margin-bottom: 15px;
+    overflow-y: scroll;
 
     @media (max-width: 1030px) {
         width: 95%;
