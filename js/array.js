@@ -101,7 +101,7 @@ document.getElementById('btn4').addEventListener('click', function () {
     if (emailImageMap[selectedEmail]) {
         emailImageMap[selectedEmail] = [];
         displayImagesForSelectedEmail();
-        showCustomAlert(`All images for ${selectedEmail} have gone bye bye.`);
+        showCustomAlert(`All images for ${selectedEmail} have gone bye bye.`, vaultboyAlert);
     }
 });
 
@@ -124,19 +124,31 @@ document.getElementById('emailForm').addEventListener('submit', function (event)
     document.getElementById('emailInput').value = '';
 });
 
-// Custom alert function
-function showCustomAlert(message) {
+// Custom alert
+function showCustomAlert(message, callback) {
     const alertBox = document.getElementById("customAlert");
     const alertMessage = document.getElementById("alertMessage");
     const closeBtn = document.getElementById("closeAlert");
 
-    // Set the alert message
+    // alert message
     alertMessage.textContent = message;
     alertBox.style.display = "flex";
 
-    // Close alert
+    // run callback
     closeBtn.onclick = function () {
         alertBox.style.display = "none";
+        if (callback) callback();
     };
-
 }
+
+// Vault Boy image popup
+function vaultboyAlert() {
+
+    document.getElementById('vaultboy').style.display = 'block';
+
+    setTimeout(() => {
+        document.getElementById('vaultboy').style.display = 'none';
+
+    }, 3000);
+}
+
