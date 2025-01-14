@@ -101,7 +101,7 @@ document.getElementById('btn4').addEventListener('click', function () {
     if (emailImageMap[selectedEmail]) {
         emailImageMap[selectedEmail] = [];
         displayImagesForSelectedEmail();
-        showCustomAlert(`All images for ${selectedEmail} have gone bye bye.`, vaultboyAlert);
+        showCustomAlert(`All images for ${selectedEmail} have gone bye bye.`, vaultboyAlert, showAchievement);
     }
 });
 
@@ -149,6 +149,18 @@ function vaultboyAlert() {
     setTimeout(() => {
         document.getElementById('vaultboy').style.display = 'none';
 
+        showAchievement('Achievement Unlocked!', 'Completed the Tutorial');
+
     }, 3000);
 }
 
+function showAchievement(title, description) {
+    const popup = document.getElementById('achievement-popup');
+    popup.querySelector('.title').textContent = title;
+    popup.querySelector('.description').textContent = description;
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 7000); // Display for 7 seconds
+}

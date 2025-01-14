@@ -393,4 +393,37 @@ main {
     height: 100%;
     z-index: 999;
   }
+}
+
+#achievement-popup {
+  font-family: Arial, sans-serif;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  padding: 15px;
+  background-color: rgba(0, 128, 0, 0.9);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: translateX(-350px);
+  transition: transform 0.5s ease-in-out;
+}
+#achievement-popup.show {
+  transform: translateX(0);
+}
+#achievement-popup img {
+  width: 60px;
+  height: 50px;
+  margin-right: 15px;
+}
+#achievement-popup .text {
+  display: flex;
+  flex-direction: column;
+}
+#achievement-popup .title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }/*# sourceMappingURL=styles.css.map */
