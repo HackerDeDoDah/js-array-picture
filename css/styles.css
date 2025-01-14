@@ -386,4 +386,11 @@ main {
   position: absolute;
   align-self: center;
   justify-self: center;
+}
+@media (max-width: 1190px) {
+  #vaultboy {
+    width: 95%;
+    height: 100%;
+    z-index: 999;
+  }
 }/*# sourceMappingURL=styles.css.map */
