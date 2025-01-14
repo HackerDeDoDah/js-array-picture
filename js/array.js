@@ -2,6 +2,7 @@
 const emailImageMap = {};
 let selectedEmail = null;
 let currentStage = 0;
+let vaultboyAlertShown = false;
 
 // update instruction stages
 function updateStage(stage, liId) {
@@ -143,15 +144,18 @@ function showCustomAlert(message, callback) {
 
 // Vault Boy image popup
 function vaultboyAlert() {
+    if (!vaultboyAlertShown) {
+        vaultboyAlertShown = true; 
 
-    document.getElementById('vaultboy').style.display = 'block';
+        document.getElementById('vaultboy').style.display = 'block';
 
-    setTimeout(() => {
-        document.getElementById('vaultboy').style.display = 'none';
+        setTimeout(() => {
+            document.getElementById('vaultboy').style.display = 'none';
 
-        showAchievement('Achievement Unlocked!', 'Completed the Tutorial');
+            showAchievement('Achievement Unlocked!', 'Completed the Tutorial');
 
-    }, 3000);
+        }, 3000);
+    }
 }
 
 function showAchievement(title, description) {
