@@ -16,7 +16,11 @@ main {
     display: flex;
     flex-direction: row;
 
-    @media (max-width: 1190px) {
+    @media (max-width: 1120px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 450px) {
         flex-direction: column;
     }
 }

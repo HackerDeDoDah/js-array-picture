@@ -57,6 +57,10 @@ function saveImageToEmail(imageUrl) {
     if (!emailImageMap[selectedEmail]) {
         emailImageMap[selectedEmail] = [];
     }
+    if (emailImageMap[selectedEmail].includes(imageUrl)) {
+        showCustomAlert('This image is already saved for this email.');
+        return;
+    }
     emailImageMap[selectedEmail].push(imageUrl);
     displayImagesForSelectedEmail();
 }
@@ -109,7 +113,7 @@ document.getElementById('btn4').addEventListener('click', function () {
 // Form event listener
 document.getElementById('emailForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    const emailInput = document.getElementById('emailInput').value.trim();
+    let emailInput = document.getElementById('emailInput').value.trim();
 
     if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput)) {
         event.preventDefault();
