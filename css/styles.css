@@ -93,12 +93,6 @@
   max-height: 565px;
   align-items: center;
 }
-@media (max-width: 1120px) {
-  .card {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
 
 .btn-container {
   display: flex;
@@ -196,16 +190,6 @@
 .email-1 #p2 {
   font-size: 1rem;
   color: #fff;
-}
-@media (max-width: 1120px) {
-  .email-1 {
-    display: none;
-  }
-}
-@media (min-width: 1120px) {
-  .email-1 {
-    width: 90%;
-  }
 }
 @media (min-width: 1190px) {
   .email-1 {
