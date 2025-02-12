@@ -51,7 +51,7 @@
     translate: -50% -50%;
     z-index: -1;
     padding: 7px;
-    border-radius: 16px;
+    border-radius: 18px;
     animation: 3s spin linear infinite;
 }
 
@@ -127,6 +127,14 @@
         display: none;
     }
 }
+
+p {
+    transition: 0.3s;
+    &:hover {
+        text-shadow: rgb(0, 255, 76) 2px 0 14px;
+    }
+}
+
 
 // email input
 .email {
@@ -489,3 +497,4 @@ button:nth-child(11) {
 button:nth-child(12) {
     filter: hue-rotate(260deg);
 }
+

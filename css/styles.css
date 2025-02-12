@@ -69,7 +69,7 @@
   translate: -50% -50%;
   z-index: -1;
   padding: 7px;
-  border-radius: 16px;
+  border-radius: 18px;
   animation: 3s spin linear infinite;
 }
 
@@ -138,6 +138,13 @@
   .mid-section {
     display: none;
   }
+}
+
+p {
+  transition: 0.3s;
+}
+p:hover {
+  text-shadow: rgb(0, 255, 76) 2px 0 14px;
 }
 
 .email {
@@ -526,4 +533,15 @@ main {
   main {
     flex-direction: column;
   }
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+footer p:hover {
+  text-shadow: rgb(0, 255, 76) 1px 0 10px;
 }/*# sourceMappingURL=styles.css.map */
