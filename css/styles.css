@@ -12,6 +12,11 @@
   font-size: 2rem;
   color: #fff;
 }
+@media (max-width: 450px) {
+  .header-container #heading {
+    font-size: 1.5rem;
+  }
+}
 
 .container {
   display: flex;
