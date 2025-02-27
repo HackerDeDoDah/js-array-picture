@@ -2,12 +2,11 @@
 const emailImageMap = {};
 let selectedEmail = null;
 
-// refresh card image
+// Refresh card image
 document.getElementById('btn1').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
     const newSrc = `https://picsum.photos/600?random=${Date.now()}`;
     cardImage.src = newSrc;
-    
 });
 
 // Update email dropdown
@@ -15,9 +14,7 @@ function updateEmailList() {
     const emailSelect = document.getElementById('emailSelect');
     emailSelect.innerHTML = '<option value="">Select an email</option>';
 
-
     for (const email in emailImageMap) {
-
         const option = document.createElement('option');
         option.value = email;
         option.textContent = email;
@@ -28,8 +25,7 @@ function updateEmailList() {
 // Handle email selection
 document.getElementById('emailSelect').addEventListener('change', function (event) {
     selectedEmail = event.target.value;
-    displayImagesForSelectedEmail(); // display images
-
+    displayImagesForSelectedEmail(); // Display images for selected email
 });
 
 // Save image to email array
@@ -54,7 +50,7 @@ function displayImagesForSelectedEmail() {
     const imageContainer = document.getElementById('image-collection');
     imageContainer.innerHTML = '';
     
-    if (emailImageMap[selectedEmail]) {
+    if (selectedEmail && emailImageMap[selectedEmail]) {
         emailImageMap[selectedEmail].forEach(url => {
             const img = document.createElement('img');
             img.src = url;
@@ -68,38 +64,34 @@ function displayImagesForSelectedEmail() {
     }
 }
 
-// add image to selected email array
+// Add image to selected email array
 document.getElementById('btn3').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
     const imageUrl = cardImage.src;
     saveImageToEmail(imageUrl);
-
 });
 
 // Delete all images for selected email
 document.getElementById('btn4').addEventListener('click', function () {
-
-
     if (!selectedEmail) {
         showCustomAlert('Please select an email to delete its images.');
         return;
     }
     if (emailImageMap[selectedEmail]) {
-        emailImageMap[selectedEmail] = [];
-        displayImagesForSelectedEmail();
-        showCustomAlert(`All images for ${selectedEmail} have gone bye bye.`);
+        delete emailImageMap[selectedEmail]; // Ensure the key is completely removed
+        updateEmailList(); // Refresh dropdown
+        displayImagesForSelectedEmail(); // Clear images display
+        showCustomAlert(`All images for ${selectedEmail} have been deleted.`);
     }
 });
 
+// Form submission handler
 document.querySelectorAll("form").forEach(form => {
     form.addEventListener("submit", function (event) {
-        console.log("Form submitted - preventDefault should run");
         event.preventDefault();
 
-        // Get the email input within the current form
         let emailInput = form.querySelector("input[type='email']");
         let email = emailInput.value.trim();
-        console.log("Email Entered:", email);
 
         if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
             showCustomAlert("Please enter a valid email address.");
@@ -115,18 +107,15 @@ document.querySelectorAll("form").forEach(form => {
     });
 });
 
-
-// Custom alert
+// Custom alert function
 function showCustomAlert(message, callback) {
     const alertBox = document.getElementById("customAlert");
     const alertMessage = document.getElementById("alertMessage");
     const closeBtn = document.getElementById("closeAlert");
 
-    // alert message
     alertMessage.textContent = message;
     alertBox.style.display = "flex";
 
-    // run callback
     closeBtn.onclick = function () {
         alertBox.style.display = "none";
         if (callback) callback();

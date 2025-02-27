@@ -19,23 +19,17 @@
   border: 2px solid #333;
   background-color: #333;
   padding: 1rem;
-  width: 100%;
+  width: 91%;
   height: 100%;
-  max-width: 530px;
   max-height: 600px;
+  max-width: 530px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
-@media (max-width: 450px) {
-  .container {
-    width: 90%;
-    max-height: 500px;
-  }
-}
 @media (max-width: 860px) {
   .container {
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 @media (max-width: 1120px) {
@@ -46,9 +40,8 @@
 }
 @media (max-width: 1190px) {
   .container {
-    max-width: 500px;
     height: 700px;
-    max-height: 700px;
+    max-height: none;
   }
 }
 
@@ -89,9 +82,17 @@
     --angle: 360deg;
   }
 }
+#card .card {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  align-items: center;
+}
+
 .card {
   width: 100%;
   max-width: 500px;
+  height: auto;
   max-height: 565px;
   align-items: center;
 }
@@ -155,7 +156,6 @@ p:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-direction: column;
   max-width: 300px;
   width: 100%;
   justify-content: center;
@@ -186,16 +186,17 @@ p:hover {
 
 .email-1 {
   display: flex;
+  flex-direction: row;
   max-width: 410px;
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 15px;
   text-align: center;
   word-wrap: break-word;
+  font-size: 12px;
   gap: 10px;
 }
 .email-1 #p2 {
@@ -205,6 +206,15 @@ p:hover {
 @media (min-width: 1190px) {
   .email-1 {
     display: none;
+  }
+}
+@media (max-width: 450px) {
+  .email-1 {
+    flex-direction: column;
+    margin: 10px 0;
+  }
+  .email-1 #p2 {
+    font-size: 1.5rem;
   }
 }
 
@@ -222,6 +232,13 @@ p:hover {
   #emailInput, #emailInput1 {
     width: 100%;
     max-width: none;
+  }
+}
+@media (max-width: 450px) {
+  #emailInput, #emailInput1 {
+    height: 36px;
+    font-size: 1.2rem;
+    width: 200px;
   }
 }
 
@@ -264,7 +281,7 @@ p:hover {
 }
 @media (max-width: 450px) {
   .array-container {
-    width: 90%;
+    width: 91%;
     align-items: center;
   }
 }
@@ -339,11 +356,11 @@ select {
   height: 40px;
   padding: 12px;
   width: 200px;
+  margin: 0;
 }
-@media (min-width: 450px) {
+@media (min-width: 1120px) {
   select {
     width: 200px;
-    margin-right: 30px;
   }
 }
 
@@ -353,11 +370,12 @@ select {
   border: 2px solid #007bff;
   border-radius: 7px;
   background-color: white;
-  font-size: 18px;
+  font-size: 14px;
   color: #333;
   cursor: pointer;
+  margin: 0;
 }
-@media (max-width: 1120px) {
+@media (min-width: 1120px) and (max-width: 1190px) {
   #emailSelect {
     width: 200px;
     margin-right: 30px;
@@ -535,11 +553,6 @@ main {
   flex-direction: row;
 }
 @media (max-width: 1120px) {
-  main {
-    flex-direction: column;
-  }
-}
-@media (max-width: 450px) {
   main {
     flex-direction: column;
   }
