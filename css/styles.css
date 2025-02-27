@@ -352,6 +352,11 @@ p:hover {
     flex-direction: column;
   }
 }
+@media (max-width: 450px) {
+  #image-collection {
+    width: 95%;
+  }
+}
 
 select {
   display: flex;

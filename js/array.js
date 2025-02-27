@@ -45,21 +45,34 @@ function saveImageToEmail(imageUrl) {
     displayImagesForSelectedEmail();
 }
 
+// function displayImagesForSelectedEmail() {
+//     const imageContainer = document.getElementById('image-collection'); 
+//     imageContainer.innerHTML = ''; // Clear previous images
+
+//     if (!emailImageMap[selectedEmail]) return;
+
+//     emailImageMap[selectedEmail].forEach(imageUrl => {
+//         const imgElement = document.createElement('img');
+//         imgElement.src = imageUrl;
+//         imageContainer.appendChild(imgElement);
+//     });
+// }
+
 // Display images for selected email
 function displayImagesForSelectedEmail() {
     const imageContainer = document.getElementById('image-collection');
     imageContainer.innerHTML = '';
     
     if (selectedEmail && emailImageMap[selectedEmail]) {
-        emailImageMap[selectedEmail].forEach(url => {
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = 'Saved image';
-            img.style.margin = '7px';
-            img.style.width = '144px';
-            img.style.height = '144px';
-            img.style.borderRadius = '4px';
-            imageContainer.appendChild(img);
+        emailImageMap[selectedEmail].forEach(imageUrl => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+            imgElement.style.margin = '7px';
+            imgElement.style.width = '144px';
+            imgElement.style.height = '144px';
+            imgElement.style.borderRadius = '4px';
+            imgElement.alt = 'Saved image';
+            imageContainer.appendChild(imgElement);
         });
     }
 }
@@ -78,12 +91,16 @@ document.getElementById('btn4').addEventListener('click', function () {
         return;
     }
     if (emailImageMap[selectedEmail]) {
-        delete emailImageMap[selectedEmail]; // Ensure the key is completely removed
-        updateEmailList(); // Refresh dropdown
-        displayImagesForSelectedEmail(); // Clear images display
-        showCustomAlert(`All images for ${selectedEmail} have been deleted.`);
+        delete emailImageMap[selectedEmail]; 
+        
+        // Reset selected email and update UI properly
+        selectedEmail = null;
+        updateEmailList(); // Refresh email list
+        document.getElementById('imageContainer').innerHTML = ''; // Clear images manually
+        showCustomAlert('All images for the selected email have been deleted.');
     }
 });
+
 
 // Form submission handler
 document.querySelectorAll("form").forEach(form => {
@@ -93,7 +110,7 @@ document.querySelectorAll("form").forEach(form => {
         let emailInput = form.querySelector("input[type='email']");
         let email = emailInput.value.trim();
 
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) { //strong regex
             showCustomAlert("Please enter a valid email address.");
             return;
         }
@@ -102,10 +119,17 @@ document.querySelectorAll("form").forEach(form => {
             emailImageMap[email] = [];
         }
 
-        updateEmailList();
+        updateEmailList(); // Refresh
+
+        // Auto-select
+        selectedEmail = email;
+        document.getElementById('emailSelect').value = email;
+        displayImagesForSelectedEmail(); // Update displayed images
+
         emailInput.value = ''; // Clear input field
     });
 });
+
 
 // Custom alert function
 function showCustomAlert(message, callback) {
