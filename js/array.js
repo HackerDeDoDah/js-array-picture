@@ -47,10 +47,12 @@ function saveImageToEmail(seed) {
     if (!emailImageMap[selectedEmail]) {
         emailImageMap[selectedEmail] = [];
     }
-    if (!emailImageMap[selectedEmail].includes(seed)) {
-        emailImageMap[selectedEmail].push(seed);
-        localStorage.setItem('emailImageMap', JSON.stringify(emailImageMap)); // Persist data
+    if (emailImageMap[selectedEmail].includes(seed)) {
+        showCustomAlert('Choose another image, you already have that one.');
+        return;
     }
+    emailImageMap[selectedEmail].push(seed);
+    localStorage.setItem('emailImageMap', JSON.stringify(emailImageMap)); // Persist data
     displayImagesForSelectedEmail();
 }
 
