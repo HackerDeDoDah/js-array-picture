@@ -1,12 +1,22 @@
-// Array for emails and images
-const emailImageMap = {};
+// switched to seeded images as i couldn't figure out how to do it the other way. got this idea from Jozef and James.
+
+// Global Variables
+const picsumSeedUrl = "https://picsum.photos/seed/";
+const imageResolution = "/600/600";
+const emailImageMap = JSON.parse(localStorage.getItem('emailImageMap')) || {};
 let selectedEmail = null;
 
-// Refresh card image
+// Generate a seeded Picsum URL
+function generateSeededImageUrl(seed) {
+    return `${picsumSeedUrl}${seed}${imageResolution}`;
+}
+
+// card image with a new seeded image
 document.getElementById('btn1').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
-    const newSrc = `https://picsum.photos/600?random=${Date.now()}`;
-    cardImage.src = newSrc;
+    const seed = Math.floor(Math.random() * 1000000); // unique seed
+    cardImage.dataset.seed = seed; // Store seed
+    cardImage.src = generateSeededImageUrl(seed);
 });
 
 // Update email dropdown
@@ -25,11 +35,11 @@ function updateEmailList() {
 // Handle email selection
 document.getElementById('emailSelect').addEventListener('change', function (event) {
     selectedEmail = event.target.value;
-    displayImagesForSelectedEmail(); // Display images for selected email
+    displayImagesForSelectedEmail();
 });
 
 // Save image to email array
-function saveImageToEmail(imageUrl) {
+function saveImageToEmail(seed) {
     if (!selectedEmail) {
         showCustomAlert('Nope! You need to add an email before saving an image.');
         return;
@@ -37,36 +47,22 @@ function saveImageToEmail(imageUrl) {
     if (!emailImageMap[selectedEmail]) {
         emailImageMap[selectedEmail] = [];
     }
-    if (emailImageMap[selectedEmail].includes(imageUrl)) {
-        showCustomAlert('This image is already saved for this email.');
-        return;
+    if (!emailImageMap[selectedEmail].includes(seed)) {
+        emailImageMap[selectedEmail].push(seed);
+        localStorage.setItem('emailImageMap', JSON.stringify(emailImageMap)); // Persist data
     }
-    emailImageMap[selectedEmail].push(imageUrl);
     displayImagesForSelectedEmail();
 }
-
-// function displayImagesForSelectedEmail() {
-//     const imageContainer = document.getElementById('image-collection'); 
-//     imageContainer.innerHTML = ''; // Clear previous images
-
-//     if (!emailImageMap[selectedEmail]) return;
-
-//     emailImageMap[selectedEmail].forEach(imageUrl => {
-//         const imgElement = document.createElement('img');
-//         imgElement.src = imageUrl;
-//         imageContainer.appendChild(imgElement);
-//     });
-// }
 
 // Display images for selected email
 function displayImagesForSelectedEmail() {
     const imageContainer = document.getElementById('image-collection');
     imageContainer.innerHTML = '';
-    
+
     if (selectedEmail && emailImageMap[selectedEmail]) {
-        emailImageMap[selectedEmail].forEach(imageUrl => {
+        emailImageMap[selectedEmail].forEach(seed => {
             const imgElement = document.createElement('img');
-            imgElement.src = imageUrl;
+            imgElement.src = generateSeededImageUrl(seed);
             imgElement.style.margin = '7px';
             imgElement.style.width = '144px';
             imgElement.style.height = '144px';
@@ -80,8 +76,10 @@ function displayImagesForSelectedEmail() {
 // Add image to selected email array
 document.getElementById('btn3').addEventListener('click', function () {
     const cardImage = document.getElementById('cardImage');
-    const imageUrl = cardImage.src;
-    saveImageToEmail(imageUrl);
+    const seed = cardImage.dataset.seed;
+    if (seed) {
+        saveImageToEmail(seed);
+    }
 });
 
 // Delete all images for selected email
@@ -90,27 +88,22 @@ document.getElementById('btn4').addEventListener('click', function () {
         showCustomAlert('Please select an email to delete its images.');
         return;
     }
-    if (emailImageMap[selectedEmail]) {
-        delete emailImageMap[selectedEmail]; 
-        
-        // Reset selected email and update UI properly
-        selectedEmail = null;
-        updateEmailList(); // Refresh email list
-        document.getElementById('imageContainer').innerHTML = ''; // Clear images manually
-        showCustomAlert('All images for the selected email have been deleted.');
-    }
+    delete emailImageMap[selectedEmail]; 
+    localStorage.setItem('emailImageMap', JSON.stringify(emailImageMap)); // Update storage
+    selectedEmail = null;
+    updateEmailList();
+    document.getElementById('image-collection').innerHTML = ''; // Clear images manually
+    showCustomAlert('All images for the selected email have been deleted.');
 });
-
 
 // Form submission handler
 document.querySelectorAll("form").forEach(form => {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
         let emailInput = form.querySelector("input[type='email']");
         let email = emailInput.value.trim();
 
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) { //strong regex
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) { // strong regex
             showCustomAlert("Please enter a valid email address.");
             return;
         }
@@ -118,28 +111,33 @@ document.querySelectorAll("form").forEach(form => {
         if (!emailImageMap[email]) {
             emailImageMap[email] = [];
         }
-
-        updateEmailList(); // Refresh
-
-        // Auto-select
+        localStorage.setItem('emailImageMap', JSON.stringify(emailImageMap));
+        updateEmailList();
         selectedEmail = email;
         document.getElementById('emailSelect').value = email;
-        displayImagesForSelectedEmail(); // Update displayed images
-
-        emailInput.value = ''; // Clear input field
+        displayImagesForSelectedEmail();
+        emailInput.value = '';
     });
 });
 
+// Load stored data on load
+window.addEventListener('load', function () {
+    updateEmailList();
+    const emailKeys = Object.keys(emailImageMap);
+    if (emailKeys.length > 0) {
+        selectedEmail = emailKeys[0];
+        document.getElementById('emailSelect').value = selectedEmail;
+        displayImagesForSelectedEmail();
+    }
+});
 
 // Custom alert function
 function showCustomAlert(message, callback) {
     const alertBox = document.getElementById("customAlert");
     const alertMessage = document.getElementById("alertMessage");
     const closeBtn = document.getElementById("closeAlert");
-
     alertMessage.textContent = message;
     alertBox.style.display = "flex";
-
     closeBtn.onclick = function () {
         alertBox.style.display = "none";
         if (callback) callback();
