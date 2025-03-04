@@ -2,7 +2,8 @@
 
 .header-container {
     display: flex;
-    padding: 5px;
+    padding: 10px; 
+    margin-top: 10px;
     justify-content: center;
     align-items: center;
     height: 35px;
@@ -11,6 +12,7 @@
     width: 100%;
     #heading {
         font-size: 2rem;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         color: #fff;
         @media (max-width: 450px) {
             font-size: 1.5rem;

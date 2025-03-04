@@ -65,7 +65,7 @@ function displayImagesForSelectedEmail() {
         emailImageMap[selectedEmail].forEach(seed => {
             const imgElement = document.createElement('img');
             imgElement.src = generateSeededImageUrl(seed);
-            imgElement.style.margin = '7px';
+            imgElement.style.margin = '4px 4px 0 4px';
             imgElement.style.width = '144px';
             imgElement.style.height = '144px';
             imgElement.style.borderRadius = '4px';

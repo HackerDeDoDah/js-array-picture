@@ -10,12 +10,14 @@
 <body>
     <header>
         <div class="header-container">
+            <!-- Css animation for the header -->
             <div id="heading" class="cssanimation leBeat sequence">
                 Random Picture Generator
             </div>
         </div>
     </header>
     <main>
+        <!-- Content for picture generation -->
         <div class="container b-rad-5 m-3">
             <div id="card" class="card b-rad-3">
                 <div class="card-body b-rad-3 col-3">
@@ -26,17 +28,18 @@
                     </div>
                 </div>
             </div>
+            <!-- Email input for smaller screens -->
             <div class="email-1">
                 <div id="p2">
                     <p>Enter Your Email To Save Your Collection</p>
                 </div>
                 <form id="emailForm1">
                     <input autocomplete="on" type="email" id="emailInput1" placeholder="Enter email address" required>
-                    <button class="btn-lg b-rad-3 p-2" id="submit1"><strong>Submit</strong></button>
+                    <button class="btn-lg b-rad-3 p-1" id="submit1"><strong>Submit</strong></button>
                 </form>
             </div>
         </div>
-        
+        <!-- Mid section for large screens -->
         <div class="mid-section">
             <div class="email">
                 <div id="p1">
@@ -49,7 +52,7 @@
                 </form>
             </div>
         </div>
-
+        <!-- Saved picture array -->
         <div class="array-container b-rad-5 m-3">
             <div class="array-btn-container">
                 <button id="btn4" class="btn-lg p-2 b-rad-3"><strong>Delete Collection</strong></button>
