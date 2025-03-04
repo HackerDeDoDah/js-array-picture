@@ -193,9 +193,12 @@ p {
     }
     @media (max-width: 450px) {
         flex-direction: column;
-        margin: 10px 0;
+        margin: 25px 0;
+        align-self: center;
+        justify-self: center;
         #p2 {
             font-size: 1.5rem;
+            line-height: 2rem;
         }
     }
 }
@@ -235,6 +238,9 @@ p {
 #submit1 {
     margin-top: 6px;
     padding: 6px;
+    @media (max-width: 450px) {
+        margin-top: 10px;
+    }
 }
 
 // icon
@@ -291,7 +297,7 @@ p {
     @media (max-width: 1120px) {
         width: 90%;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         height: auto;
     }
 }

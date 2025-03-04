@@ -4,13 +4,13 @@
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  height: 35px;
+  height: 45px;
   left: 0;
   right: 0;
   width: 100%;
 }
 .header-container #heading {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #fff;
 }
@@ -221,10 +221,13 @@ p:hover {
 @media (max-width: 450px) {
   .email-1 {
     flex-direction: column;
-    margin: 10px 0;
+    margin: 25px 0;
+    align-self: center;
+    justify-self: center;
   }
   .email-1 #p2 {
     font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -266,6 +269,11 @@ p:hover {
 #submit1 {
   margin-top: 6px;
   padding: 6px;
+}
+@media (max-width: 450px) {
+  #submit1 {
+    margin-top: 10px;
+  }
 }
 
 .fa-regular {
@@ -324,7 +332,7 @@ p:hover {
   .array-btn-container {
     width: 90%;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     height: auto;
   }
 }
