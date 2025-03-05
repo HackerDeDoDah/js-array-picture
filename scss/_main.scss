@@ -137,6 +137,28 @@ p {
     }
 }
 
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .quote-box {
+        padding: 5px;
+    }
+    
+    .quote-text {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    @media (max-width: 1100px) {
+        display: none;
+    } 
+}
+
 // email input
 
 .email {
@@ -350,6 +372,10 @@ select {
     }
 }
 
+.p3 {
+    color: #777;
+}
+
 #emailSelect {
     width: 200px;
     padding: 10px;
@@ -450,7 +476,6 @@ select {
 #closeAlert:hover {
     background-color: #0056b3;
 }
-
 
 // button animation water fill
 

@@ -51,13 +51,23 @@
                     <button class="btn-lg p-2 m-3 b-rad-3" id="submit"><strong>Submit</strong></button>
                 </form>
             </div>
+            <section class="quote-container">
+                <div>
+                    <h2>Quote of the Day</h2>
+                    <hr>
+                    <div class="quote-box p-2 m-2">
+                        <p id="quote" class="quote-text">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            
         </div>
         <!-- Saved picture array -->
         <div class="array-container b-rad-5 m-3">
             <div class="array-btn-container">
                 <button id="btn4" class="btn-lg p-2 b-rad-3"><strong>Delete Collection</strong></button>
-                <select name="Email" id="emailSelect" class="b-rad-2">
-                    <option value="">Select An Email</option>
+                <select name="Email" id="emailSelect" class="b-rad-2" placeholder="Select An Email">
+                    <option value=""></option>
                 </select>
             </div>
                 <div id="image-collection" class="b-rad-3"></div>

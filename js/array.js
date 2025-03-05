@@ -145,3 +145,28 @@ function showCustomAlert(message, callback) {
         if (callback) callback();
     };
 }
+
+// quotes
+
+function fetchQuotes() {
+    fetch('../quotes.txt')  
+        .then(response => response.text())
+        .then(data => {
+            const quotes = data.split('\n').filter(quote => quote.trim() !== ''); // Split by line and remove empty lines
+            const randomQuote = getRandomQuote(quotes);
+            document.getElementById('quote').textContent = randomQuote;
+        })
+        .catch(error => {
+            console.error('Error fetching the quotes:', error);
+            document.getElementById('quote').textContent = "Failed to load quote.";
+        });
+}
+
+// Function to pick a random quote from the array
+function getRandomQuote(quotes) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+}
+
+// Call the fetchQuotes function when the page loads
+window.onload = fetchQuotes;

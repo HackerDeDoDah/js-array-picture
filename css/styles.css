@@ -160,6 +160,28 @@ p:hover {
   text-shadow: rgb(0, 255, 76) 2px 0 14px;
 }
 
+.quote-container {
+  display: flex;
+  flex-direction: column;
+}
+.quote-container h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.quote-container .quote-box {
+  padding: 5px;
+}
+.quote-container .quote-text {
+  font-size: 1.2rem;
+  text-align: center;
+}
+@media (max-width: 1100px) {
+  .quote-container {
+    display: none;
+  }
+}
+
 .email {
   display: flex;
   flex-direction: column;
@@ -388,6 +410,10 @@ select {
   select {
     width: 200px;
   }
+}
+
+.p3 {
+  color: #777;
 }
 
 #emailSelect {
