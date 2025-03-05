@@ -149,7 +149,7 @@ function showCustomAlert(message, callback) {
 // quotes
 
 function fetchQuotes() {
-    fetch('../quotes.txt')  
+    fetch('quotes.txt')  
         .then(response => response.text())
         .then(data => {
             const quotes = data.split('\n').filter(quote => quote.trim() !== ''); // Split by line and remove empty lines
